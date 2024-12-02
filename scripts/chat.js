@@ -20,7 +20,7 @@ class ChatRoom {
         return response;
     };
 
-    getChats(onChatAdded){
+    getChats(onChatAdded) {
         this.unsub = this.chats
             .where('room', '==', this.room)
             .orderBy('created_at')
@@ -33,13 +33,13 @@ class ChatRoom {
             });
     }
 
-    updateUsername(username){
+    updateUsername(username) {
         this.username = username
         //save username in local storage
         localStorage.setItem('username', username)
     }
 
-    updateRoom(room){
+    updateRoom(room) {
         this.room = room
         if(this.unsub){
             this.unsub();
